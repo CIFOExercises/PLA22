@@ -1,0 +1,12 @@
+<div class="card mb-3" *ngIf="selectedWine">
+  <h3 class="card-header text-center mb-3">{{ selectedWine.nombre }}</h3>
+  <img src="/assets/img/{{ selectedWine.imagen }}" alt="" />
+  <div class="card-body text-center">
+    <h4>{{ selectedWine.region }}</h4>
+    <h4>{{ selectedWine.uvas }}</h4>
+    <h4>{{ selectedWine.anyo }}</h4>
+    <p class="card-text">
+      {{ selectedWine.descripcion }}
+    </p>
+  </div>
+</div>
