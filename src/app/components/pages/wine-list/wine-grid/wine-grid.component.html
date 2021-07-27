@@ -1,6 +1,12 @@
+<h3>Gran seleccion de vinos. Todos en Stock!</h3>
 <div class="wine-grid">
-  <div class="card" *ngFor="let wine of wines">
-    <div class="card-body">
+  <div
+    class="card"
+    *ngFor="let wine of wines"
+    (mouseenter)="onMouseEnter(wine)"
+    (mouseleave)="onMouseLeave()"
+  >
+    <div class="card-body mx-auto">
       <img
         src="/assets/img/{{ wine?.imagen }}"
         alt="wine.nombre"

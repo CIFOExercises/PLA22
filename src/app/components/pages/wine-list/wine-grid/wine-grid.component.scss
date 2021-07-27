@@ -5,5 +5,10 @@
 }
 
 img {
+  filter: drop-shadow(5px 5px 20px rgba(0, 0, 0, 0.5)) blur(5px);
+  transition: all 0.3s;
+}
+
+img:hover {
   filter: drop-shadow(5px 5px 20px rgba(0, 0, 0, 0.5));
 }

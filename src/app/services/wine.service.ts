@@ -16,4 +16,8 @@ export class WineService {
   getWines(): Observable<Wine[]> {
     return this.http.get<Wine[]>(this.URL);
   }
+
+  getWineById(id: string): Observable<Wine> {
+    return this.http.get<Wine>(`${this.URL}/${id}`);
+  }
 }

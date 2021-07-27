@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { Wine } from 'src/app/models/wine';
-import { WineService } from 'src/app/services/wine.service';
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-wine-grid',
@@ -9,8 +9,21 @@ import { WineService } from 'src/app/services/wine.service';
 })
 export class WineGridComponent implements OnInit {
   @Input() wines: Wine[] = [];
+  @Output() selectWine: EventEmitter<Wine>;
+  @Output() unSelectWine: EventEmitter<null>;
 
-  constructor() {}
+  constructor() {
+    this.selectWine = new EventEmitter();
+    this.unSelectWine = new EventEmitter();
+  }
 
   ngOnInit(): void {}
+
+  onMouseEnter(wine: Wine) {
+    this.selectWine.emit(wine);
+  }
+
+  onMouseLeave() {
+    this.unSelectWine.emit();
+  }
 }

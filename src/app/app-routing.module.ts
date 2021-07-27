@@ -7,7 +7,7 @@ import { WineListComponent } from './components/pages/wine-list/wine-list.compon
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'carta', component: WineListComponent },
-  { path: '**', component: NotFoundComponent },
+  { path: '**', component: NotFoundComponent, pathMatch: 'full' },
 ];
 
 @NgModule({

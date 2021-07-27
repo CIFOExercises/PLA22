@@ -1,6 +1,10 @@
-<div class="card mb-3" *ngIf="selectedWine">
+<div class="card mb-3" id="card-details" *ngIf="selectedWine">
   <h3 class="card-header text-center mb-3">{{ selectedWine.nombre }}</h3>
-  <img src="/assets/img/{{ selectedWine.imagen }}" alt="" />
+  <img
+    src="/assets/img/{{ selectedWine.imagen }}"
+    alt="/assets/img/{{ selectedWine.nombre }}"
+    class="w-50 align-self-center"
+  />
   <div class="card-body text-center">
     <h4>{{ selectedWine.region }}</h4>
     <h4>{{ selectedWine.uvas }}</h4>

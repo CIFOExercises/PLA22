@@ -9,6 +9,7 @@ import { WineService } from 'src/app/services/wine.service';
 })
 export class WineListComponent implements OnInit {
   wines: Wine[] = [];
+  selectedWine?: Wine | null;
 
   constructor(private wineService: WineService) {
     this.wineService.getWines().subscribe(
@@ -18,7 +19,6 @@ export class WineListComponent implements OnInit {
         });
 
         this.wines = wines;
-        console.log(wines);
       },
       (error) => console.log(`Error al recuperar la lista ${error}`),
       () => console.log('Vinos recuperados correctamente')
@@ -26,4 +26,12 @@ export class WineListComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
+  onSelectWine(wine: Wine) {
+    this.selectedWine = wine;
+  }
+
+  onUnSelectWine() {
+    this.selectedWine = null;
+  }
 }
